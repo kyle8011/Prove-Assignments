@@ -7,8 +7,13 @@ points based on if their guess was correct or not.
 structure:
     Object: card
         responsibility: select a random number from 1 - 13
-        behaviors: none
+        behaviors: Display the number drawn
         states: none
+    Object: GamePlay
+        responsibility: keep track of score, user input, and display
+        behaviors: display information to the user, add up score, take user input
+        states: still playing, correct, incorrect
+
     variables:
         guess: whether the next card will be higher or lower
         score: keep track of what points were earned
