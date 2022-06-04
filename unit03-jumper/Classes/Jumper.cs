@@ -3,10 +3,10 @@ using System;
 namespace unit03_jumper.Classes
 {
     ///<summary>
-    ///
+    /// A class that draws what is left of the jumper's parachute
     ///</summary>
     public class Jumper{
-        TerminalService draw = new TerminalService();
+        private TerminalService draw = new TerminalService();
         public int wrong_guesses = 0;
         /// <summary>
         /// Creates an instance of Jumper

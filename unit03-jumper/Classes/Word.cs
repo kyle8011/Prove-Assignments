@@ -7,7 +7,7 @@ namespace unit03_jumper.Classes{
     /// </summary>
     public class ChooseWord
     {
-        public List<string> words = new List<string>();
+        private List<string> words = new List<string>();
         
         private int word_index;
         /// <summary>
@@ -41,8 +41,6 @@ namespace unit03_jumper.Classes{
             
             Random random = new Random();
             word_index = random.Next(10);
-            //word = words[word_index];
-            //Console.WriteLine(words[word_index]);
             return words[word_index];
         }
     }
