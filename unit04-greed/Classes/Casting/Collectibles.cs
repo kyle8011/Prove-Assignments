@@ -1,3 +1,4 @@
+using System;
 namespace Unit04_greed.Classes.Casting
 {
     
@@ -14,16 +15,19 @@ namespace Unit04_greed.Classes.Casting
         /// </summary>
         public class Collectible : Actor
         {
-            private int points;
+            private int value;
+            private int new_value;
         
-
+            Random random = new Random();
     // 2) Create the class constructor. Use the following method comment.
         
         /// <summary>
         /// Constructs a new instance of Collectible.
         /// </summary>
         public Collectible() {
-            this.points = 0;
+            new_value = random.Next(-3, 4);
+            if (new_value == 0) {new_value = -1;}
+            this.value = new_value;
         }       
 
     // 3) Create the GetMessage() method. Use the following method comment.
@@ -32,8 +36,8 @@ namespace Unit04_greed.Classes.Casting
         /// Gets the Collectible's message.
         /// </summary>
         /// <returns>The points as an integer.</returns>
-        public int GetPoints() {
-            return points;
+        public int GetValue() {
+            return value;
         }
 
     // 4) Create the SetMessage(string message) method. Use the following method comment.
@@ -42,7 +46,7 @@ namespace Unit04_greed.Classes.Casting
         /// Sets the Collectible's message to the given value.
         /// </summary>
         /// <param name="points">The given message.</param>
-        public void SetPoints(int points) {
-            this.points = points;
+        public void SetValue(int value) {
+            this.value = value;
         }
 }}

@@ -11,6 +11,8 @@ namespace Unit04_greed.Classes.Casting
     {
         private int x = 0;
         private int y = 0;
+        private bool x_boundary;
+        private bool y_boundary;
 
         /// <summary>
         /// Constructs a new instance of Point using the given x and y values.
@@ -42,7 +44,9 @@ namespace Unit04_greed.Classes.Casting
         /// <returns>True if both x and y are equal; false if otherwise.</returns>
         public bool Equals(Point other)
         {
-            return this.x == other.GetX() && this.y == other.GetY();
+            x_boundary = this.x <= other.GetX() + 10 && this.x >= other.GetX() - 10;
+            y_boundary = this.y <= other.GetY() + 10;
+            return x_boundary && y_boundary;
         }
 
         /// <summary>

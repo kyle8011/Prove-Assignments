@@ -1,0 +1,38 @@
+Greed:
+This game involves collecting gems or rocks. Gems will increase the total
+score and rocks will decrease the total score.
+Gems:
+Blue = 1 Point
+Purple = 2 Points
+Green = 3 Points
+Rocks:
+White = -1 Point
+Red = -2 Points
+Yellow = -3 Points
+Controls:
+Left and Right arrow keys
+
+Classes:
+    Actor:
+        Purpose: create a character with color, shape, size, and location that can be accessed and changed throughout the game
+
+    Cast:
+        Purpose: Create several different lists of actors to be accessed during the game
+
+    Collectibles:
+        Purpose: Create a specific type of actor that has a value variable which determines the points it is worth
+
+    Color:
+        Purpose: Return red green or blue colors
+
+    Point:
+        Purpose: Give the location of an object relative to the screen
+
+    KeyboardService:
+        Purpose: Allow user input, namely the arrow keys
+
+    VideoService:
+        Purpose: Draw the screen, including the banners, background, and each actor during every DoOutputs call
+
+    Director:
+        Purpose: Pull everything together. Contains the main loop for gameplay and what should happen during each step of that loop
