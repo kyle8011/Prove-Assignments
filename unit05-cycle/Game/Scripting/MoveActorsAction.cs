@@ -17,7 +17,6 @@ namespace unit05_cycle.Game.Scripting
     /// </summary>
     public class MoveActorsAction : Action
     {
-
         // 2) Create the class constructor. Use the following method comment.
 
         /// <summary>

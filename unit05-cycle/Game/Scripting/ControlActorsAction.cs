@@ -15,7 +15,7 @@ namespace unit05_cycle.Game.Scripting
         private KeyboardService keyboardService;
         private Point direction1 = new Point(Constants.CELL_SIZE, 0);
         private Point direction2 = new Point(Constants.CELL_SIZE, 0);
-
+        private bool initial = true;
         /// <summary>
         /// Constructs a new instance of ControlActorsAction using the given KeyboardService.
         /// </summary>
@@ -27,6 +27,14 @@ namespace unit05_cycle.Game.Scripting
         /// <inheritdoc/>
         public void Execute(Cast cast, Script script)
         {
+            while (initial == true)
+            {
+                direction1 = new Point(0, -Constants.CELL_SIZE);
+                direction2 = new Point(0, -Constants.CELL_SIZE);
+                initial = false;
+            }
+            Time time = (Time)cast.GetFirstActor("time");
+            time.AddTime(cast);
             // left
             if (keyboardService.IsKeyDown("a"))
             {   

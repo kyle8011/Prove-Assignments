@@ -116,12 +116,12 @@ namespace unit05_cycle.Game.Casting
 
             if (player == 1) {
                 Point position = new Point(10 * Constants.CELL_SIZE, y);
-                Point velocity = new Point(0, 1000);
+                Point velocity = new Point(0, -1000);
                 string text =  "8";
                 Color color = Constants.GREEN;
                 Actor segment = new Actor();
                 segment.SetPosition(position);
-                //segment.SetVelocity(velocity);
+                segment.SetVelocity(velocity);
                 segment.SetText(text);
                 segment.SetColor(color);
                 segments.Add(segment);

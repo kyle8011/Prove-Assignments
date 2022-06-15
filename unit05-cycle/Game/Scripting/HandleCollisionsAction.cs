@@ -19,6 +19,8 @@ namespace unit05_cycle.Game.Scripting
         private bool isGameOver = false;
         public bool OneIsAlive = true;
         public bool TwoIsAlive = true;
+        private int death_time1 = 0;
+        private int death_time2 = 0;
 
         /// <summary>
         /// Constructs a new instance of HandleCollisionsAction.
@@ -79,21 +81,28 @@ namespace unit05_cycle.Game.Scripting
 
         private void HandleGameOver(Cast cast)
         {
+            Time time = (Time)cast.GetFirstActor("time");
+            if (OneIsAlive) {death_time1 = time.GetTime();}
+            if (TwoIsAlive) {death_time2 = time.GetTime();}
             if (isGameOver == true)
             {
                 Snake snake1 = (Snake)cast.GetFirstActor("snake");
                 List<Actor> segments1 = snake1.GetSegments();
                 Snake snake2 = (Snake)cast.GetSecondActor("snake");
                 List<Actor> segments2 = snake2.GetSegments();
+                
 
-                if (OneIsAlive == false) {
+                
+                if (!OneIsAlive)
+                {
                     // create a "game over" message
                     int x = Constants.MAX_X / 2;
                     int y = (Constants.MAX_Y / 2)-20;
                     Point position1 = new Point(x, y);
 
                     Actor message1 = new Actor();
-                    message1.SetText("Player 1 Died!");
+                    
+                    message1.SetText($"Player 1 Died at {death_time1}");
                     message1.SetPosition(position1);
                     cast.AddActor("messages", message1);
 
@@ -109,7 +118,7 @@ namespace unit05_cycle.Game.Scripting
                     int y = (Constants.MAX_Y / 2)+20;
                     Point position2 = new Point(x, y);
                     Actor message2 = new Actor();
-                    message2.SetText("Player 2 Died!");
+                    message2.SetText($"Player 2 Died at {death_time2}");
                     message2.SetPosition(position2);
                     cast.AddActor("messages", message2);
                     // make everything white

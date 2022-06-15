@@ -28,15 +28,13 @@ namespace unit05_cycle.Game.Scripting
             List<Actor> segments1 = snake1.GetSegments();
             Snake snake2 = (Snake) cast.GetSecondActor("snake");
             List<Actor> segments2 = snake2.GetSegments();
-            Actor score = cast.GetFirstActor("score");
-            //Actor food = cast.GetFirstActor("food");
+            Actor time = cast.GetFirstActor("time");
             List<Actor> messages = cast.GetActors("messages");
             
             videoService.ClearBuffer();
             videoService.DrawActors(segments1);
             videoService.DrawActors(segments2);
-            videoService.DrawActor(score);
-            //videoService.DrawActor(food);
+            videoService.DrawActor(time);
             videoService.DrawActors(messages);
             videoService.FlushBuffer();
         }

@@ -19,13 +19,12 @@ namespace unit05_cycle
         {
             // create the cast
             Cast cast = new Cast();
-            //cast.AddActor("food", new Food());
             cast.AddActor("snake", new Snake(1));
             cast.AddActor("snake", new Snake(2));
-            cast.AddActor("score", new Score());
+            cast.AddActor("time", new Time(cast));
 
             // create the services
-            KeyboardService keyboardService = new KeyboardService();
+            KeyboardService keyboardService= new KeyboardService();
             VideoService videoService = new VideoService(false);
            
             // create the script

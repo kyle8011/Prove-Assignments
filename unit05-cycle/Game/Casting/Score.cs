@@ -1,34 +1,41 @@
 using System;
+using System.Collections.Generic;
 
 
 namespace unit05_cycle.Game.Casting
 {
     /// <summary>
-    /// <para>A tasty item that snakes like to eat.</para>
+    /// <para>Keeps track of how long the game has run</para>
     /// <para>
     /// The responsibility of Food is to select a random position and points that it's worth.
     /// </para>
     /// </summary>
-    public class Score : Actor
+    public class Time : Actor
     {
-        private int points = 0;
+        private int time = 0;
 
         /// <summary>
         /// Constructs a new instance of Score, starting at 0.
         /// </summary>
-        public Score()
+        public Time(Cast cast)
         {
-            AddPoints(0);
+            AddTime(cast);
         }
 
         /// <summary>
-        /// Adds the given points to the score.
+        /// Increments time by 1 and sets the text
         /// </summary>
         /// <param name="points">The points to add.</param>
-        public void AddPoints(int points)
+        public void AddTime(Cast cast)
         {
-            this.points += points;
-            SetText($"Score: {this.points}");
+            Snake snake = (Snake)cast.GetFirstActor("snake");
+            List<Actor> body = snake.GetBody(); 
+            time++;
+            SetText($"Time: {this.time}");
+        }
+        public int GetTime() 
+        {
+            return time;
         }
     }
 }
