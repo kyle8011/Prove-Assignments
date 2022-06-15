@@ -101,7 +101,7 @@ namespace unit05_cycle.Game.Scripting
                     Point position1 = new Point(x, y);
 
                     Actor message1 = new Actor();
-                    
+                    message1.SetColor(Constants.GREEN);
                     message1.SetText($"Player 1 Died at {death_time1}");
                     message1.SetPosition(position1);
                     cast.AddActor("messages", message1);
@@ -118,6 +118,7 @@ namespace unit05_cycle.Game.Scripting
                     int y = (Constants.MAX_Y / 2)+20;
                     Point position2 = new Point(x, y);
                     Actor message2 = new Actor();
+                    message2.SetColor(Constants.RED);
                     message2.SetText($"Player 2 Died at {death_time2}");
                     message2.SetPosition(position2);
                     cast.AddActor("messages", message2);
